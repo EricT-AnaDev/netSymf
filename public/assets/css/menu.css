@@ -1,0 +1,11 @@
+#formSearch{
+    position: relative;
+}
+#resultSearch{
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 2.4rem;
+    transition: all .3s;
+    background-color: fuchsia;
+}
