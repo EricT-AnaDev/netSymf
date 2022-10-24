@@ -9,7 +9,7 @@
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ film.id }}</td>
+                <td><img src="{{asset('assets/img/posters/' ~ film.id ~ '.jpg')}}" onerror="this.src='{{ asset('assets/img/posters/default.jpg') }}'" alt="poster"></td>
             </tr>
             <tr>
                 <th>Title</th>
@@ -31,8 +31,10 @@
     </table>
 
     <a href="{{ path('app_films_index') }}">back to list</a>
-
+    
+  
     <a href="{{ path('app_films_edit', {'id': film.id}) }}">edit</a>
-
+   
+   
     {{ include('films/_delete_form.html.twig') }}
 {% endblock %}

@@ -63,4 +63,13 @@ class FilmsRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function getTitleLike ($value)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.title LIKE :val')
+            ->setParameter('val', "%".$value."%")
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 }
